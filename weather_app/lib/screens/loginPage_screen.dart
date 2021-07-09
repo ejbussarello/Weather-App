@@ -10,10 +10,6 @@ class LoginPage extends StatefulWidget {
 class _LoginPageState extends State<LoginPage> {
   @override
   Widget build(BuildContext context) {
-    //Tratando ScrellView e Container. Defini tamanho do container o mesmo
-    //tamanho da tela.
-    //double height = MediaQuery.of(context).size.height;
-
     return Scaffold(
       backgroundColor: Colors.grey[100],
       body: SingleChildScrollView(
