@@ -100,7 +100,9 @@ class _LoginPageState extends State<LoginPage> {
                 height: 50,
                 top: 380,
                 child: ElevatedButton(
-                  onPressed: () {},
+                  onPressed: () {
+                    Navigator.pushNamed(context, '/home');
+                  },
                   style: ElevatedButton.styleFrom(
                     primary: Color(0xff2f3644),
                     //primary: Colors.black54,
