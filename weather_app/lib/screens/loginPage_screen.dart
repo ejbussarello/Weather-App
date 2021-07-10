@@ -1,13 +1,11 @@
 import 'package:flutter/material.dart';
+import 'package:weather_app/components/components.dart';
+import 'package:weather_app/router/router.dart';
+import 'package:weather_app/screens/homePage_screen.dart';
 
-class LoginPage extends StatefulWidget {
+class LoginPage extends StatelessWidget {
   const LoginPage({Key? key}) : super(key: key);
 
-  @override
-  _LoginPageState createState() => _LoginPageState();
-}
-
-class _LoginPageState extends State<LoginPage> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -19,7 +17,7 @@ class _LoginPageState extends State<LoginPage> {
             alignment: Alignment.center,
             children: [
               Positioned(
-                top: 120,
+                top: 100,
                 child: Text(
                   'Weatherise',
                   style: TextStyle(
@@ -30,7 +28,7 @@ class _LoginPageState extends State<LoginPage> {
                 ),
               ),
               Positioned(
-                top: 110,
+                top: 90,
                 right: 60,
                 child: Text(
                   "´´´",
@@ -41,53 +39,18 @@ class _LoginPageState extends State<LoginPage> {
                 ),
               ),
               Positioned(
-                width: 250,
-                height: 50,
-                top: 200,
-                child: TextFormField(
-                  decoration: InputDecoration(
-                    hintText: "Username",
-                    fillColor: Color(0xff2f3644),
-                    focusedBorder: OutlineInputBorder(
-                      borderRadius: BorderRadius.circular(4.0),
-                      borderSide: BorderSide(
-                        width: 2,
-                        color: Color(0xff2f3644),
+                top: 180,
+                child: Container(
+                  width: 250,
+                  height: 150,
+                  child: Column(
+                    children: [
+                      textFormField("Username", false),
+                      SizedBox(
+                        height: 20,
                       ),
-                    ),
-                    enabledBorder: OutlineInputBorder(
-                      borderRadius: BorderRadius.circular(4.0),
-                      borderSide: BorderSide(
-                        color: Color(0xff2f3644),
-                        width: 2,
-                      ),
-                    ),
-                  ),
-                ),
-              ),
-              Positioned(
-                width: 250,
-                height: 50,
-                top: 280,
-                child: TextFormField(
-                  obscureText: true,
-                  decoration: InputDecoration(
-                    hintText: "Password",
-                    fillColor: Color(0xff2f3644),
-                    focusedBorder: OutlineInputBorder(
-                      borderRadius: BorderRadius.circular(4.0),
-                      borderSide: BorderSide(
-                        width: 2,
-                        color: Color(0xff2f3644),
-                      ),
-                    ),
-                    enabledBorder: OutlineInputBorder(
-                      borderRadius: BorderRadius.circular(4.0),
-                      borderSide: BorderSide(
-                        width: 2,
-                        color: Color(0xff2f3644),
-                      ),
-                    ),
+                      textFormField("Password", true),
+                    ],
                   ),
                 ),
               ),
@@ -97,7 +60,7 @@ class _LoginPageState extends State<LoginPage> {
                 top: 380,
                 child: ElevatedButton(
                   onPressed: () {
-                    Navigator.pushNamed(context, '/home');
+                    Navigator.pushNamed(context, homeRoute);
                   },
                   style: ElevatedButton.styleFrom(
                     primary: Color(0xff2f3644),

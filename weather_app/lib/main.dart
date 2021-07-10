@@ -13,7 +13,7 @@ class MyApp extends StatelessWidget {
       title: 'Weather App',
       theme: ThemeData(fontFamily: 'Hoftype'),
       onGenerateRoute: Router.generateRoute,
-      initialRoute: homeRoute,
+      initialRoute: loginRoute,
     );
   }
 }
